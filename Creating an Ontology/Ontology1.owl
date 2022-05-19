@@ -1,0 +1,373 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY Ontology1 "http://www.semanticweb.org/ontologies/2018/Ontology1.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2018/Ontology1.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2018/Ontology1.owl"
+     xmlns:Ontology1="http://www.semanticweb.org/ontologies/2018/Ontology1.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#actedIn -->
+
+    <owl:ObjectProperty rdf:about="#actedIn">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="#Actor"/>
+        <rdfs:range rdf:resource="#Movie"/>
+        <owl:inverseOf rdf:resource="#hasActor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#directedBy -->
+
+    <owl:ObjectProperty rdf:about="#directedBy">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:range rdf:resource="#Director"/>
+        <rdfs:domain rdf:resource="#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#directorOf -->
+
+    <owl:ObjectProperty rdf:about="#directorOf">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="#Director"/>
+        <rdfs:range rdf:resource="#Movie"/>
+        <owl:inverseOf rdf:resource="#directedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#filmedIn -->
+
+    <owl:ObjectProperty rdf:about="#filmedIn">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:range rdf:resource="#Country"/>
+        <rdfs:domain rdf:resource="#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#hasActor -->
+
+    <owl:ObjectProperty rdf:about="#hasActor">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:range rdf:resource="#Actor"/>
+        <rdfs:domain rdf:resource="#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#hasLanguage -->
+
+    <owl:ObjectProperty rdf:about="#hasLanguage">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="#Country"/>
+        <rdfs:range rdf:resource="#Language"/>
+        <rdfs:domain rdf:resource="#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#musicBy -->
+
+    <owl:ObjectProperty rdf:about="#musicBy">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="#Movie"/>
+        <rdfs:range rdf:resource="#MusicComposer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#musicFor -->
+
+    <owl:ObjectProperty rdf:about="#musicFor">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:range rdf:resource="#Movie"/>
+        <rdfs:domain rdf:resource="#MusicComposer"/>
+        <owl:inverseOf rdf:resource="#musicBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#producedBy -->
+
+    <owl:ObjectProperty rdf:about="#producedBy">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="#Movie"/>
+        <rdfs:range rdf:resource="#Producer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#producerOf -->
+
+    <owl:ObjectProperty rdf:about="#producerOf">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:range rdf:resource="#Movie"/>
+        <rdfs:domain rdf:resource="#Producer"/>
+        <owl:inverseOf rdf:resource="#producedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#writerOf -->
+
+    <owl:ObjectProperty rdf:about="#writerOf">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:range rdf:resource="#Movie"/>
+        <rdfs:domain rdf:resource="#Writer"/>
+        <owl:inverseOf rdf:resource="#writtenBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#writtenBy -->
+
+    <owl:ObjectProperty rdf:about="#writtenBy">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="#Movie"/>
+        <rdfs:range rdf:resource="#Writer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#abstract -->
+
+    <owl:DatatypeProperty rdf:about="#abstract"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#capital -->
+
+    <owl:DatatypeProperty rdf:about="#capital">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#Country"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#continent -->
+
+    <owl:DatatypeProperty rdf:about="#continent">
+        <rdfs:domain rdf:resource="#Country"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#countryAbstract -->
+
+    <owl:DatatypeProperty rdf:about="#countryAbstract">
+        <rdfs:domain rdf:resource="#Country"/>
+        <rdfs:subPropertyOf rdf:resource="#abstract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#countryName -->
+
+    <owl:DatatypeProperty rdf:about="#countryName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#Country"/>
+        <rdfs:domain rdf:resource="#Movie"/>
+        <rdfs:subPropertyOf rdf:resource="#name"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#currency -->
+
+    <owl:DatatypeProperty rdf:about="#currency">
+        <rdfs:domain rdf:resource="#Country"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#movieAbstract -->
+
+    <owl:DatatypeProperty rdf:about="#movieAbstract">
+        <rdfs:domain rdf:resource="#Movie"/>
+        <rdfs:subPropertyOf rdf:resource="#abstract"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#movieName -->
+
+    <owl:DatatypeProperty rdf:about="#movieName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#Movie"/>
+        <rdfs:subPropertyOf rdf:resource="#name"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="#name"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#population -->
+
+    <owl:DatatypeProperty rdf:about="#population">
+        <rdfs:domain rdf:resource="#Country"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#runtime -->
+
+    <owl:DatatypeProperty rdf:about="#runtime">
+        <rdfs:domain rdf:resource="#Movie"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#totalArea -->
+
+    <owl:DatatypeProperty rdf:about="#totalArea">
+        <rdfs:domain rdf:resource="#Country"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#Actor -->
+
+    <owl:Class rdf:about="#Actor">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#Country -->
+
+    <owl:Class rdf:about="#Country"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#Director -->
+
+    <owl:Class rdf:about="#Director">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#Language -->
+
+    <owl:Class rdf:about="#Language"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#Movie -->
+
+    <owl:Class rdf:about="#Movie"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#MusicComposer -->
+
+    <owl:Class rdf:about="#MusicComposer">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#Person -->
+
+    <owl:Class rdf:about="#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#Producer -->
+
+    <owl:Class rdf:about="#Producer">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2018/Ontology1.owl#Writer -->
+
+    <owl:Class rdf:about="#Writer">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
